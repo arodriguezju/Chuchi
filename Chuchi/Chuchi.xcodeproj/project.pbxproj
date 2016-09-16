@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27342A661D8CBBC6007FFBC4 /* Firebase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27342A651D8CBBC6007FFBC4 /* Firebase.plist */; };
 		27FD48C8D6D406FDE0C2236F /* libPods-Chuchi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B8133A1CCB983E2AF83BB9 /* libPods-Chuchi.a */; };
 		6C2A51261D8CB55100ACCBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A51251D8CB55100ACCBA8 /* main.m */; };
 		6C2A51291D8CB55100ACCBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A51281D8CB55100ACCBA8 /* AppDelegate.m */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		14CAB625B84134BA72AC4233 /* Pods-Chuchi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chuchi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chuchi/Pods-Chuchi.release.xcconfig"; sourceTree = "<group>"; };
-		27342A651D8CBBC6007FFBC4 /* Firebase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Firebase.plist; sourceTree = "<group>"; };
 		6C2A51211D8CB55100ACCBA8 /* Chuchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chuchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2A51251D8CB55100ACCBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C2A51271D8CB55100ACCBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				6C2A51301D8CB55100ACCBA8 /* Assets.xcassets */,
 				6C2A51321D8CB55100ACCBA8 /* LaunchScreen.storyboard */,
 				6C2A51351D8CB55100ACCBA8 /* Info.plist */,
-				27342A651D8CBBC6007FFBC4 /* Firebase.plist */,
 				6C2A51241D8CB55100ACCBA8 /* Supporting Files */,
 			);
 			path = Chuchi;
@@ -173,7 +170,6 @@
 			files = (
 				6C2A51341D8CB55100ACCBA8 /* LaunchScreen.storyboard in Resources */,
 				6C2A513C1D8CB93C00ACCBA8 /* GoogleService-Info.plist in Resources */,
-				27342A661D8CBBC6007FFBC4 /* Firebase.plist in Resources */,
 				6C2A51311D8CB55100ACCBA8 /* Assets.xcassets in Resources */,
 				6C2A512F1D8CB55100ACCBA8 /* Main.storyboard in Resources */,
 			);
