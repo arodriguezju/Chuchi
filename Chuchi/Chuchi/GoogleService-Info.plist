@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>627609665073-mt0u5b9qriimmbuq7ebrcks6aj9a5joj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.627609665073-mt0u5b9qriimmbuq7ebrcks6aj9a5joj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAF0JHyoExAdIXEqd1_wxxyxxl-XVdBfz0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>627609665073</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>hackzurich.Chuchi</string>
+	<key>PROJECT_ID</key>
+	<string>chuchi-face6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chuchi-face6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:627609665073:ios:ad99f5928ce277d1</string>
+	<key>DATABASE_URL</key>
+	<string>https://chuchi-face6.firebaseio.com</string>
+</dict>
+</plist>

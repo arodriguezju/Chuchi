@@ -1,0 +1,4 @@
+target 'Chuchi' do
+pod 'Firebase/Core'
+pod 'AFNetworking', '~> 2.5'
+end
