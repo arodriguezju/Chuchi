@@ -16,6 +16,7 @@
 // "Send a message using <myApp>"
 
 @interface IntentViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *fakeButton;
 
 @end
 
@@ -23,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fakeButton.layer.cornerRadius = 6.0;
+    self.fakeButton.layer.borderColor = UIColor.whiteColor.CGColor;
+    self.fakeButton.layer.borderWidth = 1.0;
     // Do any additional setup after loading the view.
 }
 

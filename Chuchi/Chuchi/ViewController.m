@@ -38,9 +38,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+    ref = [ref child:@"stores"];
+    self.geoFire = [[GeoFire alloc] initWithFirebaseRef:ref];
     // Do any additional setup after loading the view, typically from a nib.
     [self loadRemindersForUser];
-    [self startMonitoringUserLocation];
     UNAuthorizationOptions options = UNAuthorizationOptionAlert;
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
         NSLog(@"Notification permissions %d with error %@", granted, error);
@@ -74,14 +76,11 @@
             Reminder* reminder = [[Reminder alloc] initWithDictionary:reminderDictionary];
             [welf.reminders addObject:reminder];
         }
+        [self startMonitoringUserLocation];
     }];
 }
 
 - (void)startMonitoringUserLocation{
-    FIRDatabaseReference *ref = [[FIRDatabase database] reference];
-    ref = [ref child:@"stores"];
-    self.geoFire = [[GeoFire alloc] initWithFirebaseRef:ref];
-    
     __weak typeof(self) welf = self;
     INTULocationManager *locMgr = [INTULocationManager sharedInstance];
     [locMgr subscribeToLocationUpdatesWithBlock:^(CLLocation *currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
@@ -93,7 +92,7 @@
     __weak typeof(self) welf = self;
     
     if (!self.circleQuery) {
-        self.circleQuery = [self.geoFire queryAtLocation:currentLocation withRadius:3];
+        self.circleQuery = [self.geoFire queryAtLocation:currentLocation withRadius:5];
     } else {
         self.circleQuery.center = currentLocation;
     }
@@ -104,6 +103,7 @@
             NSLog(@"Already processed %@", key);
             return;
         }
+        [self.foundKeys addObject:key];
         [welf checkIfAnyProductAvailableAtStoreWithKey:key];
     }];
     
@@ -119,18 +119,30 @@
 - (void)checkIfAnyProductAvailableAtStoreWithKey:(NSString*)key{
     for (Reminder* reminder in self.reminders) {
         if (reminder.product) {
+            if (reminder.locationOfShopThatHasProduct) {
+                return;
+            }
+            NSLog(@"Looking for %@ at %@", reminder.product.EANCode, key);
             [[AvailabilityCheckService sharedInstance] checkIfProduct:reminder.product isAvailableAtStoreWithKey:key withCompletionBlock:^(BOOL success, NSString * shopName) {
                 NSLog(@"Looking for %@. FOUND %d at %@(%@)", reminder.product.EANCode, success, shopName, key);
                 if (!success) {
                     return;
                 }
+                if (reminder.locationOfShopThatHasProduct) {
+                    return;
+                }
                 [self.geoFire getLocationForKey:key withCallback:^(CLLocation *location, NSError *error) {
                     NSLog(@"Got location %@ for %@ with error %@", location, key, error);
                     if (location) {
+                        if (reminder.locationOfShopThatHasProduct) {
+                            return;
+                        }
+                        reminder.nameOfShopThatHasProduct = shopName;
+                        reminder.locationOfShopThatHasProduct = location;
                         [[ProductService sharedInstance] loadImagesForProduct:reminder.product withCompletionBlock:^(BOOL success2) {
                             NSLog(@"Loaded images for %@ with success %d", reminder.product.EANCode, success2);
                             if (success) {
-                                [self showNotificationForReminder:reminder fromShopName:shopName atLocation:location];
+                                [self showNotificationForReminder:reminder];
                             }
                         }];
                     }
@@ -140,14 +152,14 @@
     }
 }
 
-- (void)showNotificationForReminder:(Reminder*)reminder fromShopName:(NSString*)shopName atLocation:(CLLocation*)location{
+- (void)showNotificationForReminder:(Reminder*)reminder{
     NSLog(@"Showing notification for %@ - %@", reminder.message, reminder.product.name);
     [[ReminderCreatorService sharedInstance] removeReminder:reminder];
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
     content.title = @"Shopping request";
-    content.body = [NSString stringWithFormat:@"%@ says: \"%@\": %@ from the %@ nearby", reminder.reminderCreator, reminder.message, reminder.product.name, shopName];
+    content.body = [NSString stringWithFormat:@"%@ says: \"%@\": %@ from the %@ nearby.", reminder.reminderCreator, reminder.message, reminder.product.name, reminder.nameOfShopThatHasProduct];
     content.sound = [UNNotificationSound defaultSound];
-    content.userInfo = @{@"latitude" : @(location.coordinate.latitude), @"longitude" : @(location.coordinate.longitude), @"shopName" : shopName};
+    content.userInfo = @{@"latitude" : @(reminder.locationOfShopThatHasProduct.coordinate.latitude), @"longitude" : @(reminder.locationOfShopThatHasProduct.coordinate.longitude), @"shopName" : reminder.nameOfShopThatHasProduct};
     
     if (reminder.product.URLToLocalImage) {
         NSError* error;
@@ -157,7 +169,7 @@
     
     // Deliver the notification in five seconds.
     UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
-                                                  triggerWithTimeInterval:1 repeats:NO];
+                                                  triggerWithTimeInterval:5 repeats:NO];
     UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"ReminderForShopping"
                                                                           content:content trigger:trigger];
     // Schedule the notification.

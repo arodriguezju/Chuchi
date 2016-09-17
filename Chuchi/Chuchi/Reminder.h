@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import CoreLocation;
 
 @class Product;
 
@@ -18,5 +19,8 @@
 @property (readonly) NSString* message;
 @property (readonly) NSString* reminderCreator;
 @property (readonly) Product* product;
+
+@property NSString* nameOfShopThatHasProduct;
+@property CLLocation* locationOfShopThatHasProduct;
 
 @end
