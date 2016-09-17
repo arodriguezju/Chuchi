@@ -20,22 +20,22 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Firebase (3.5.2):
-    - Firebase/Core (= 3.5.2)
-  - Firebase/Analytics (3.5.2):
-    - FirebaseAnalytics (~> 3.3)
-  - Firebase/Core (3.5.2):
+  - Firebase (3.6.0):
+    - Firebase/Core (= 3.6.0)
+  - Firebase/Analytics (3.6.0):
+    - FirebaseAnalytics (= 3.4.2)
+  - Firebase/Core (3.6.0):
     - Firebase/Analytics
-  - Firebase/Database (3.5.2):
+  - Firebase/Database (3.6.0):
     - Firebase/Analytics
-    - FirebaseDatabase (= 3.0.2)
-  - FirebaseAnalytics (3.3.1):
+    - FirebaseDatabase (= 3.0.3)
+  - FirebaseAnalytics (3.4.2):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
     - GoogleUtilities (~> 1.2)
-  - FirebaseDatabase (3.0.2):
-    - FirebaseAnalytics (~> 3.2)
+  - FirebaseDatabase (3.0.3):
+    - FirebaseAnalytics (~> 3.3)
   - FirebaseInstanceID (1.0.8)
   - GeoFire (2.0.0):
     - Firebase/Database (~> 3.2)
@@ -45,6 +45,7 @@ PODS:
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
   - INTULocationManager (4.2.0)
+  - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - FirebaseDatabase
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
   - INTULocationManager
+  - MBProgressHUD
 
 EXTERNAL SOURCES:
   GeoFire:
@@ -64,16 +66,17 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Firebase: 94e63112efcad75226c0356a8f3032397b8547c9
-  FirebaseAnalytics: d968d4d5f6aeb795cd64144337bcd233e530efc6
-  FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
+  Firebase: 34187200ef4979dbd485c7aa685ef078bf587c86
+  FirebaseAnalytics: 3f5358d9104adf159cc8d99b7b501e50099a39ad
+  FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   GeoFire: ef73103b88eb026c27212c40ea16757d6ad362ea
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   INTULocationManager: 73f8254b3d05c897c56bb13c190e5b7c648c0998
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: 08a198a8a8ba6073e55042c469496720407bb27c
+PODFILE CHECKSUM: c65c463e2643b8cae5133ee4fd3f64babb96f913
 
 COCOAPODS: 1.0.1

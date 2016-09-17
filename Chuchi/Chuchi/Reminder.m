@@ -11,6 +11,7 @@
 
 @interface Reminder()
 
+@property (readwrite) NSString* message;
 @property (readwrite) NSString* reminderCreator;
 @property (readwrite) Product* product;
 
@@ -22,6 +23,7 @@
     if (self) {
         self.reminderFired = [dictionary[NSStringFromSelector(@selector(reminderFired))] boolValue];
         self.reminderCreator = dictionary[NSStringFromSelector(@selector(reminderCreator))];
+        self.message = dictionary[NSStringFromSelector(@selector(message))];
         self.product = [[Product alloc] initWithDictionary:dictionary[NSStringFromSelector(@selector(product))]];
     }
     return self;

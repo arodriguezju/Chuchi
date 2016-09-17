@@ -9,9 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ChuchiSiriExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>ChuchiSiriExtensionUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>27342A711D8D38C4007FFBC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>27342A7B1D8D38C4007FFBC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6C2A51201D8CB55100ACCBA8</key>
 		<dict>
 			<key>primary</key>

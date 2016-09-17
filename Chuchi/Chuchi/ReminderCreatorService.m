@@ -17,13 +17,12 @@
     static ReminderCreatorService* instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [FIRApp configure];
         instance = [ReminderCreatorService new];
     });
     return instance;
 }
 
-- (void)createReminderForUser:(NSString*)user forProductWithEANNumber:(NSString*)EANNumber createdByReminderCreator:(NSString*)reminderCreator withCompletionBlock:(void (^)(BOOL))completionBlock{
+- (void)createReminderForUser:(NSString*)user withMessage:(NSString*)message forProductWithEANNumber:(NSString*)EANNumber createdByReminderCreator:(NSString*)reminderCreator withCompletionBlock:(void (^)(BOOL))completionBlock{
     NSString* urlFormat = @"https://api.siroop.ch/product/ean/%@/?apikey=8ccd66bb1265472cbf8bed4458af4b07";
     NSString* urlString = [NSString stringWithFormat:urlFormat, EANNumber];
     NSURL* url = [NSURL URLWithString:urlString];
@@ -33,18 +32,21 @@
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        BOOL success = responseObject[@"success"];
-        if (success) {
-            NSString* name = responseObject[@"name"];
-            NSString* imageURL = responseObject[@"images"][@"highres"];
-            
-            FIRDatabaseReference* reference = [[[[[FIRDatabase database] reference] child:@"user"] child:user] child:@"reminders"];
-            NSDictionary* dictionary = @{@"reminderFired" : @(NO), @"reminderCreator" : reminderCreator, @"product" : @{@"EANCode" : EANNumber, @"name" : name, @"imageURL" : imageURL}};
-            [[reference childByAutoId] setValue:dictionary withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
-                NSLog(@"Done with error %@", error);
-                completionBlock(error != Nil);
-            }];
+        NSArray* result = responseObject;
+        if (!result.count) {
+            completionBlock(NO);
+            return;
         }
+        NSDictionary* firstResult = result.firstObject;
+        NSString* name = firstResult[@"name"];
+        NSString* imageURL = firstResult[@"images"][@"highres"];
+        
+        FIRDatabaseReference* reference = [[[[[FIRDatabase database] reference] child:@"user"] child:user] child:@"reminders"];
+        NSDictionary* dictionary = @{@"message" : message, @"reminderFired" : @(NO), @"reminderCreator" : reminderCreator, @"product" : @{@"EANCode" : EANNumber, @"name" : name, @"imageURL" : imageURL}};
+        [[reference childByAutoId] setValue:dictionary withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+            NSLog(@"Done with error %@", error);
+            completionBlock(error == Nil);
+        }];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completionBlock(NO);

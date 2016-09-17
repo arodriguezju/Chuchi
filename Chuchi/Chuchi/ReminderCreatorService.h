@@ -10,5 +10,5 @@
 
 @interface ReminderCreatorService : NSObject
 + (instancetype)sharedInstance;
-- (void)createReminderForUser:(NSString*)user forProductWithEANNumber:(NSString*)EANNumber createdByReminderCreator:(NSString*)reminderCreator withCompletionBlock:(void (^)(BOOL))completionBlock;
+- (void)createReminderForUser:(NSString*)user withMessage:(NSString*)message forProductWithEANNumber:(NSString*)EANNumber createdByReminderCreator:(NSString*)reminderCreator withCompletionBlock:(void (^)(BOOL))completionBlock;
 @end

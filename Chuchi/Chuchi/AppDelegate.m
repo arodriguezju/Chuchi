@@ -10,6 +10,8 @@
 @import Firebase;
 @import UserNotifications;
 @import MapKit;
+#import <ScanditBarcodeScanner/ScanditBarcodeScanner.h>
+#import "Message.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -21,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FIRApp configure];
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    [SBSLicense setAppKey:@"ht3TvoRueMHxg1vCcoGPOGder7wI+J4RtqUvlCuBsh0"];
     return YES;
 }
 
@@ -73,5 +76,14 @@
         [destinationPoint openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking}];
     });
     completionHandler();
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler{
+    NSLog(@"<<<<<=======|========>>>>> %@", userActivity.userInfo);
+    
+    [Message sharedInstance].recipient = userActivity.userInfo[NSStringFromSelector(@selector(recipient))];
+    [Message sharedInstance].message = userActivity.userInfo[NSStringFromSelector(@selector(message))];
+    
+    return YES;
 }
 @end

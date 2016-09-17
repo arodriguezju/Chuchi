@@ -4,9 +4,8 @@ pod 'FirebaseDatabase'
 pod 'INTULocationManager'
 pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
 pod 'AFNetworking', '~> 2.5'
+pod 'MBProgressHUD'
 end
 
 target 'ChuchiSiriExtension' do
-pod 'FirebaseDatabase'
-pod 'Firebase'
 end

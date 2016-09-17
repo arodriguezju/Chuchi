@@ -17,13 +17,19 @@
 #import "AvailabilityCheckService.h"
 #import "User.h"
 #import "ProductService.h"
+#import <ScanditBarcodeScanner/ScanditBarcodeScanner.h>
+#import <MBProgressHUD.h>
+#import "Message.h"
 
-@interface ViewController ()
+@interface ViewController ()  <SBSScanDelegate>
 
 @property FIRDatabaseReference* reference;
 @property NSMutableArray<Reminder*>* reminders;
 @property GeoFire* geoFire;
 @property GFCircleQuery *circleQuery;
+@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
+@property (weak, nonatomic) IBOutlet SBSBarcodePickerView *barcodeScannerView;
+@property NSMutableSet* scannedBarcodes;
 
 @end
 
@@ -38,6 +44,10 @@
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
         NSLog(@"Notification permissions %d with error %@", granted, error);
     }];
+    
+    [self.barcodeScannerView setScanDelegate:self];
+    
+    self.scannedBarcodes = [NSMutableSet new];
 }
 
 
@@ -125,7 +135,7 @@
 - (void)showNotificationForReminder:(Reminder*)reminder fromShopName:(NSString*)shopName{
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
     content.title = @"Shopping request";
-    content.body = [NSString stringWithFormat:@"%@ would like you to buy %@ from the %@ nearby", reminder.reminderCreator, reminder.product.name, shopName];
+    content.body = [NSString stringWithFormat:@"%@ says: \"%@\": %@ from the %@ nearby", reminder.reminderCreator, reminder.message, reminder.product.name, shopName];
     content.sound = [UNNotificationSound defaultSound];
     
     if (reminder.product.URLToLocalImage) {
@@ -144,5 +154,44 @@
     [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
         NSLog(@"=========== Error %@", error);
     }];
+}
+
+- (void)didScanBarcode:(NSString *)barcode {
+    
+    if ([self.scannedBarcodes containsObject:barcode]) {
+        return;
+    }
+    [self.scannedBarcodes addObject:barcode];
+    [self.codeLabel setText:barcode];
+    
+    MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString* forWhom = Message.sharedInstance.recipient;
+    hud.label.text = [NSString stringWithFormat:@"Creating reminder for %@", forWhom];
+    hud.label.numberOfLines = 0;
+    hud.mode = MBProgressHUDModeIndeterminate;
+                      
+    [[ReminderCreatorService sharedInstance] createReminderForUser:forWhom withMessage:Message.sharedInstance.message  forProductWithEANNumber:barcode createdByReminderCreator:User.sharedInstance.name withCompletionBlock:^(BOOL success) {
+        if (success) {
+            hud.label.text = @"Reminder created!";
+        } else {
+            hud.label.text = @"Failed";
+        }
+        hud.mode = MBProgressHUDModeText;
+        
+        NSLog(@"Created the reminder for %@ / %@ with %d", forWhom, barcode, success);
+        [hud hideAnimated:YES afterDelay:3.0];
+    }];
+}
+
+- (void)barcodePicker:(nonnull SBSBarcodePicker*)picker didScan:(nonnull SBSScanSession*)session{
+    
+    NSArray* recognized = session.newlyRecognizedCodes;
+    if (recognized.count >0) {
+        SBSCode *code = recognized.firstObject;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self didScanBarcode:[code data] ];
+        }) ;
+    }
 }
 @end
