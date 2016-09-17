@@ -58,9 +58,9 @@
 }
 
 - (void)removeReminder:(Reminder*)reminder{
-    FIRDatabaseReference* reference = [[[[[[FIRDatabase database] reference] child:@"user"] child:User.sharedInstance.name] child:@"reminders"] child:reminder.reminderId];
-    [reference setValue:Nil withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
-        NSLog(@"Result %@", error);
-    }];
+//    FIRDatabaseReference* reference = [[[[[[FIRDatabase database] reference] child:@"user"] child:User.sharedInstance.name] child:@"reminders"] child:reminder.reminderId];
+//    [reference setValue:Nil withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+//        NSLog(@"Result %@", error);
+//    }];
 }
 @end

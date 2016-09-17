@@ -23,7 +23,7 @@
 
 - (void)checkIfProduct:(Product*)product isAvailableAtStoreWithKey:(NSString*)key withCompletionBlock:(void (^)(BOOL,NSString*))completionBlock{
     NSString* urlFormat = @"http://euve250296.serverprofi24.net:3000/items/%@/%@";
-    NSString* urlString = [NSString stringWithFormat:urlFormat, key, product.EANCode];
+    NSString* urlString = [NSString stringWithFormat:urlFormat, product.EANCode, key];
     NSURL* url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -31,10 +31,8 @@
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (!responseObject[@"item"]) {
-            completionBlock(NO, Nil);
-        }
-        
+        NSString* storeName = responseObject[@"storeName"];
+        completionBlock(YES, storeName);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completionBlock(NO, Nil);
     }];
