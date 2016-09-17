@@ -29,7 +29,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self loadRemindersForUser];
     [self startMonitoringUserLocation];
-    
 }
 
 
@@ -56,16 +55,22 @@
 }
 
 - (void)startMonitoringUserLocation{
+    __weak typeof(self) welf = self;
     INTULocationManager *locMgr = [INTULocationManager sharedInstance];
     [locMgr subscribeToLocationUpdatesWithBlock:^(CLLocation *currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
-        
+        [welf startMonitoringGeoFireWithLocation:currentLocation];
     }];
 }
 
 - (void)startMonitoringGeoFireWithLocation:(CLLocation*)currentLocation{
     __weak typeof(self) welf = self;
 
-    self.circleQuery = [self.geoFire queryAtLocation:currentLocation withRadius:1];
+    if (!self.circleQuery) {
+        self.circleQuery = [self.geoFire queryAtLocation:currentLocation withRadius:1];
+    } else {
+        self.circleQuery.center = currentLocation;
+    }
+    
     [self.circleQuery observeEventType:GFEventTypeKeyEntered withBlock:^(NSString *key, CLLocation *location) {
         [welf checkIfAnyProductAvailableAtStoreWithKey:key];
     }];
