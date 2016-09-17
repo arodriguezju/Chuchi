@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27324BC21D8D6F4C00CC1D26 /* AvailabilityCheckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27324BC11D8D6F4C00CC1D26 /* AvailabilityCheckService.m */; };
 		27342A6A1D8CBD21007FFBC4 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A691D8CBD21007FFBC4 /* Reminder.m */; };
 		27342A6D1D8CBE66007FFBC4 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A6C1D8CBE66007FFBC4 /* Product.m */; };
 		27342A761D8D38C4007FFBC4 /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A751D8D38C4007FFBC4 /* IntentHandler.m */; };
@@ -15,6 +16,9 @@
 		27342A851D8D38C4007FFBC4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27342A831D8D38C4007FFBC4 /* MainInterface.storyboard */; };
 		27342A891D8D38C4007FFBC4 /* ChuchiSiriExtensionUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 27342A7C1D8D38C4007FFBC4 /* ChuchiSiriExtensionUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		27342A8C1D8D38C4007FFBC4 /* ChuchiSiriExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 27342A721D8D38C4007FFBC4 /* ChuchiSiriExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		27342A971D8D3F32007FFBC4 /* ReminderCreatorService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A961D8D3F32007FFBC4 /* ReminderCreatorService.m */; };
+		27342A981D8D4338007FFBC4 /* ReminderCreatorService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A961D8D3F32007FFBC4 /* ReminderCreatorService.m */; };
+		27342A9B1D8D4701007FFBC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27342A9A1D8D4701007FFBC4 /* GoogleService-Info.plist */; };
 		27FD48C8D6D406FDE0C2236F /* libPods-Chuchi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B8133A1CCB983E2AF83BB9 /* libPods-Chuchi.a */; };
 		6C2A51261D8CB55100ACCBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A51251D8CB55100ACCBA8 /* main.m */; };
 		6C2A51291D8CB55100ACCBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A51281D8CB55100ACCBA8 /* AppDelegate.m */; };
@@ -23,6 +27,7 @@
 		6C2A51311D8CB55100ACCBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A51301D8CB55100ACCBA8 /* Assets.xcassets */; };
 		6C2A51341D8CB55100ACCBA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A51321D8CB55100ACCBA8 /* LaunchScreen.storyboard */; };
 		6C2A513C1D8CB93C00ACCBA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A513B1D8CB93C00ACCBA8 /* GoogleService-Info.plist */; };
+		9BF5C854961361AC8EB2E1B9 /* libPods-ChuchiSiriExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BEB814F4EE18CBC284CF20 /* libPods-ChuchiSiriExtension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		14CAB625B84134BA72AC4233 /* Pods-Chuchi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chuchi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chuchi/Pods-Chuchi.release.xcconfig"; sourceTree = "<group>"; };
+		27324BC01D8D6F4C00CC1D26 /* AvailabilityCheckService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailabilityCheckService.h; sourceTree = "<group>"; };
+		27324BC11D8D6F4C00CC1D26 /* AvailabilityCheckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailabilityCheckService.m; sourceTree = "<group>"; };
 		27342A681D8CBD21007FFBC4 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		27342A691D8CBD21007FFBC4 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		27342A6B1D8CBE66007FFBC4 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -73,6 +80,9 @@
 		27342A811D8D38C4007FFBC4 /* IntentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentViewController.m; sourceTree = "<group>"; };
 		27342A841D8D38C4007FFBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		27342A861D8D38C4007FFBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27342A951D8D3F32007FFBC4 /* ReminderCreatorService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCreatorService.h; sourceTree = "<group>"; };
+		27342A961D8D3F32007FFBC4 /* ReminderCreatorService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCreatorService.m; sourceTree = "<group>"; };
+		27342A9A1D8D4701007FFBC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C2A51211D8CB55100ACCBA8 /* Chuchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chuchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2A51251D8CB55100ACCBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C2A51271D8CB55100ACCBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,7 +95,10 @@
 		6C2A51351D8CB55100ACCBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C2A513B1D8CB93C00ACCBA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FDB1F386C8E3683D202FACF /* Pods-Chuchi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chuchi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chuchi/Pods-Chuchi.debug.xcconfig"; sourceTree = "<group>"; };
+		88BEB814F4EE18CBC284CF20 /* libPods-ChuchiSiriExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChuchiSiriExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69E01C8F60453911B7B73FE /* Pods-ChuchiSiriExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuchiSiriExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChuchiSiriExtension/Pods-ChuchiSiriExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C2B8133A1CCB983E2AF83BB9 /* libPods-Chuchi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chuchi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E785A41754EA1F254F42477B /* Pods-ChuchiSiriExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuchiSiriExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChuchiSiriExtension/Pods-ChuchiSiriExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF5C854961361AC8EB2E1B9 /* libPods-ChuchiSiriExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +145,7 @@
 			children = (
 				27342A741D8D38C4007FFBC4 /* IntentHandler.h */,
 				27342A751D8D38C4007FFBC4 /* IntentHandler.m */,
+				27342A9A1D8D4701007FFBC4 /* GoogleService-Info.plist */,
 				27342A771D8D38C4007FFBC4 /* Info.plist */,
 			);
 			path = ChuchiSiriExtension;
@@ -145,6 +160,17 @@
 				27342A861D8D38C4007FFBC4 /* Info.plist */,
 			);
 			path = ChuchiSiriExtensionUI;
+			sourceTree = "<group>";
+		};
+		27342A941D8D3F1F007FFBC4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				27342A951D8D3F32007FFBC4 /* ReminderCreatorService.h */,
+				27342A961D8D3F32007FFBC4 /* ReminderCreatorService.m */,
+				27324BC01D8D6F4C00CC1D26 /* AvailabilityCheckService.h */,
+				27324BC11D8D6F4C00CC1D26 /* AvailabilityCheckService.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		6C2A51181D8CB55100ACCBA8 = {
@@ -172,6 +198,7 @@
 		6C2A51231D8CB55100ACCBA8 /* Chuchi */ = {
 			isa = PBXGroup;
 			children = (
+				27342A941D8D3F1F007FFBC4 /* Services */,
 				27342A671D8CBD03007FFBC4 /* Model */,
 				6C2A51271D8CB55100ACCBA8 /* AppDelegate.h */,
 				6C2A51281D8CB55100ACCBA8 /* AppDelegate.m */,
@@ -200,6 +227,8 @@
 			children = (
 				6FDB1F386C8E3683D202FACF /* Pods-Chuchi.debug.xcconfig */,
 				14CAB625B84134BA72AC4233 /* Pods-Chuchi.release.xcconfig */,
+				E785A41754EA1F254F42477B /* Pods-ChuchiSiriExtension.debug.xcconfig */,
+				B69E01C8F60453911B7B73FE /* Pods-ChuchiSiriExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -209,6 +238,7 @@
 			children = (
 				C2B8133A1CCB983E2AF83BB9 /* libPods-Chuchi.a */,
 				27342A7D1D8D38C4007FFBC4 /* IntentsUI.framework */,
+				88BEB814F4EE18CBC284CF20 /* libPods-ChuchiSiriExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27342A921D8D38C4007FFBC4 /* Build configuration list for PBXNativeTarget "ChuchiSiriExtension" */;
 			buildPhases = (
+				E6ACD23B5C1269100FB5F75D /* [CP] Check Pods Manifest.lock */,
 				27342A6E1D8D38C4007FFBC4 /* Sources */,
 				27342A6F1D8D38C4007FFBC4 /* Frameworks */,
 				27342A701D8D38C4007FFBC4 /* Resources */,
+				4A62F215A6F2A4B7FD022E4F /* [CP] Embed Pods Frameworks */,
+				3CCCF64E1922E906C1AAC9A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27342A9B1D8D4701007FFBC4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +398,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		3CCCF64E1922E906C1AAC9A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChuchiSiriExtension/Pods-ChuchiSiriExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A62F215A6F2A4B7FD022E4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChuchiSiriExtension/Pods-ChuchiSiriExtension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AC7293ED8A6A5E7DFD9E2C52 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -394,6 +458,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chuchi/Pods-Chuchi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E6ACD23B5C1269100FB5F75D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -401,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27342A981D8D4338007FFBC4 /* ReminderCreatorService.m in Sources */,
 				27342A761D8D38C4007FFBC4 /* IntentHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +501,8 @@
 				27342A6D1D8CBE66007FFBC4 /* Product.m in Sources */,
 				6C2A51291D8CB55100ACCBA8 /* AppDelegate.m in Sources */,
 				6C2A51261D8CB55100ACCBA8 /* main.m in Sources */,
+				27342A971D8D3F32007FFBC4 /* ReminderCreatorService.m in Sources */,
+				27324BC21D8D6F4C00CC1D26 /* AvailabilityCheckService.m in Sources */,
 				27342A6A1D8CBD21007FFBC4 /* Reminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +552,7 @@
 /* Begin XCBuildConfiguration section */
 		27342A8D1D8D38C4007FFBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E785A41754EA1F254F42477B /* Pods-ChuchiSiriExtension.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = JEHAG5DVUC;
 				INFOPLIST_FILE = ChuchiSiriExtension/Info.plist;
@@ -482,6 +565,7 @@
 		};
 		27342A8E1D8D38C4007FFBC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B69E01C8F60453911B7B73FE /* Pods-ChuchiSiriExtension.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = JEHAG5DVUC;
 				INFOPLIST_FILE = ChuchiSiriExtension/Info.plist;
@@ -640,6 +724,7 @@
 				27342A901D8D38C4007FFBC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27342A921D8D38C4007FFBC4 /* Build configuration list for PBXNativeTarget "ChuchiSiriExtension" */ = {
 			isa = XCConfigurationList;
@@ -648,6 +733,7 @@
 				27342A8E1D8D38C4007FFBC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C2A511C1D8CB55100ACCBA8 /* Build configuration list for PBXProject "Chuchi" */ = {
 			isa = XCConfigurationList;

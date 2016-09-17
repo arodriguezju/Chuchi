@@ -12,6 +12,9 @@
 @import FirebaseDatabase;
 #import <INTULocationManager.h>
 #import <GeoFire.h>
+#import "ReminderCreatorService.h"
+@import UserNotifications;
+#import "AvailabilityCheckService.h"
 
 @interface ViewController ()
 
@@ -29,6 +32,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self loadRemindersForUser];
     [self startMonitoringUserLocation];
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert;
+    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        NSLog(@"Notification permissions %d with error %@", granted, error);
+    }];
 }
 
 
@@ -50,6 +57,7 @@
             NSDictionary* reminderDictionary = reminders[key];
             Reminder* reminder = [[Reminder alloc] initWithDictionary:reminderDictionary];
             [welf.reminders addObject:reminder];
+            [welf showNotificationForReminder:reminder fromShopName:@"Best shop ever"];
         }
     }];
 }
@@ -64,7 +72,7 @@
 
 - (void)startMonitoringGeoFireWithLocation:(CLLocation*)currentLocation{
     __weak typeof(self) welf = self;
-
+    
     if (!self.circleQuery) {
         self.circleQuery = [self.geoFire queryAtLocation:currentLocation withRadius:1];
     } else {
@@ -76,7 +84,7 @@
     }];
     
     [self.circleQuery observeEventType:GFEventTypeKeyExited withBlock:^(NSString *key, CLLocation *location) {
-
+        
     }];
     
     [self.circleQuery observeReadyWithBlock:^{
@@ -87,14 +95,35 @@
 - (void)checkIfAnyProductAvailableAtStoreWithKey:(NSString*)key{
     for (Reminder* reminder in self.reminders) {
         if (reminder.product) {
-            [self checkIfProductWithEAN:reminder.product.EANCode isAvailableAtStoreWithKey:key withCallback:^(BOOL param) {
-                NSLog(@"FOUND %d %@ at %@", param, reminder.product.EANCode, key);
+            [[AvailabilityCheckService sharedInstance] checkIfProduct:reminder.product isAvailableAtStoreWithKey:key withCompletionBlock:^(BOOL success, NSString * shopName) {
+                if (!reminder.reminderFired) {
+                    [self showNotificationForReminder:reminder fromShopName:shopName];
+                }
+                NSLog(@"FOUND %d %@ at %@(%@)", success, reminder.product.EANCode, shopName, key);
             }];
         }
     }
 }
 
-- (void)checkIfProductWithEAN:(NSString*)EANCode isAvailableAtStoreWithKey:(NSString*)key withCallback:(void (^)(BOOL))completionBlock{
-    completionBlock(YES);
+- (void)showNotificationForReminder:(Reminder*)reminder fromShopName:(NSString*)shopName{
+    UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
+    content.title = @"Shopping request";
+    content.body = [NSString stringWithFormat:@"%@ would like you to buy %@ from %@", reminder.reminderCreator, reminder.product.name, shopName];
+    content.sound = [UNNotificationSound defaultSound];
+    
+    NSError* error;
+    UNNotificationAttachment* image = [UNNotificationAttachment attachmentWithIdentifier:@"image" URL:reminder.product.URLToLocalImage options:@{} error:&error];
+    content.attachments = @[image];
+    
+    // Deliver the notification in five seconds.
+    UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
+                                                  triggerWithTimeInterval:0 repeats:NO];
+    UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"ReminderForShopping"
+                                                                          content:content trigger:trigger];
+    // Schedule the notification.
+    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        NSLog(@"=========== Error %@", error);
+    }];
 }
 @end

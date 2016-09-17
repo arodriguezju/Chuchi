@@ -7,10 +7,13 @@
 //
 
 #import "Product.h"
+#import <AFHTTPRequestOperation.h>
 
 @interface Product()
 
 @property (readwrite) NSString* EANCode;
+@property (readwrite) NSString* name;
+@property (readwrite) NSURL* URLToRemoteImage;
 
 @end
 
@@ -21,6 +24,8 @@
     self = [super init];
     if (self) {
         self.EANCode = dictionary[NSStringFromSelector(@selector(EANCode))];
+        self.name = dictionary[NSStringFromSelector(@selector(name))];
+        self.URLToRemoteImage = dictionary[@"imageURL"];
     }
     return self;
 }

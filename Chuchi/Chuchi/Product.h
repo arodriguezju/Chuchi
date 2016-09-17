@@ -13,5 +13,8 @@
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 
 @property (readonly) NSString* EANCode;
+@property (readonly) NSString* name;
+@property NSURL* URLToLocalImage;
+@property (readonly) NSURL* URLToRemoteImage;
 
 @end
