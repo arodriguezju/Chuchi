@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 @import Firebase;
 @import UserNotifications;
+@import MapKit;
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -56,4 +57,21 @@
     completionHandler(UNNotificationPresentationOptionAlert);
 }
 
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+    CLLocationDegrees latitude = [response.notification.request.content.userInfo[@"latitude"] doubleValue];
+    CLLocationDegrees longitude = [response.notification.request.content.userInfo[@"longitude"] doubleValue];
+    
+    latitude = 47.3790568;
+    longitude = 8.5394801;
+    
+    MKPlacemark* placemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(latitude, longitude)];
+
+    MKMapItem* destinationPoint;
+    destinationPoint = [[MKMapItem alloc] initWithPlacemark: [[MKPlacemark alloc] initWithPlacemark:placemark]];
+    destinationPoint.name = @"Sexy beast"; //response.notification.request.content.userInfo[@"shopName"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [destinationPoint openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking}];
+    });
+    completionHandler();
+}
 @end

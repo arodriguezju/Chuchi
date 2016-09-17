@@ -10,6 +10,7 @@
 		27324BC21D8D6F4C00CC1D26 /* AvailabilityCheckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27324BC11D8D6F4C00CC1D26 /* AvailabilityCheckService.m */; };
 		27324BC61D8D7D2300CC1D26 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 27324BC51D8D7D2300CC1D26 /* User.m */; };
 		27324BC91D8D84AD00CC1D26 /* ProductService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27324BC81D8D84AD00CC1D26 /* ProductService.m */; };
+		27324BCD1D8D90FE00CC1D26 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27324BCC1D8D90FE00CC1D26 /* MapKit.framework */; };
 		27342A6A1D8CBD21007FFBC4 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A691D8CBD21007FFBC4 /* Reminder.m */; };
 		27342A6D1D8CBE66007FFBC4 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A6C1D8CBE66007FFBC4 /* Product.m */; };
 		27342A761D8D38C4007FFBC4 /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A751D8D38C4007FFBC4 /* IntentHandler.m */; };
@@ -71,6 +72,8 @@
 		27324BC51D8D7D2300CC1D26 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		27324BC71D8D84AD00CC1D26 /* ProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductService.h; sourceTree = "<group>"; };
 		27324BC81D8D84AD00CC1D26 /* ProductService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductService.m; sourceTree = "<group>"; };
+		27324BCA1D8D90F600CC1D26 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		27324BCC1D8D90FE00CC1D26 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		27342A681D8CBD21007FFBC4 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		27342A691D8CBD21007FFBC4 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		27342A6B1D8CBE66007FFBC4 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27324BCD1D8D90FE00CC1D26 /* MapKit.framework in Frameworks */,
 				9BF5C854961361AC8EB2E1B9 /* libPods-ChuchiSiriExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +257,8 @@
 		C8BCA3DCE7B763CF0B780DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27324BCC1D8D90FE00CC1D26 /* MapKit.framework */,
+				27324BCA1D8D90F600CC1D26 /* CoreLocation.framework */,
 				C2B8133A1CCB983E2AF83BB9 /* libPods-Chuchi.a */,
 				27342A7D1D8D38C4007FFBC4 /* IntentsUI.framework */,
 				88BEB814F4EE18CBC284CF20 /* libPods-ChuchiSiriExtension.a */,

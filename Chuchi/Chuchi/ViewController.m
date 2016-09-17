@@ -125,7 +125,7 @@
 - (void)showNotificationForReminder:(Reminder*)reminder fromShopName:(NSString*)shopName{
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
     content.title = @"Shopping request";
-    content.body = [NSString stringWithFormat:@"%@ would like you to buy %@ from %@", reminder.reminderCreator, reminder.product.name, shopName];
+    content.body = [NSString stringWithFormat:@"%@ would like you to buy %@ from the %@ nearby", reminder.reminderCreator, reminder.product.name, shopName];
     content.sound = [UNNotificationSound defaultSound];
     
     if (reminder.product.URLToLocalImage) {
