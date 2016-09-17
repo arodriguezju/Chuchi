@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 @import Firebase;
 @import UserNotifications;
+#import <ScanditBarcodeScanner/ScanditBarcodeScanner.h>
+
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -20,6 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FIRApp configure];
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    [SBSLicense setAppKey:@"ht3TvoRueMHxg1vCcoGPOGder7wI+J4RtqUvlCuBsh0"];
+
     return YES;
 }
 

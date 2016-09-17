@@ -17,13 +17,17 @@
 #import "AvailabilityCheckService.h"
 #import "User.h"
 #import "ProductService.h"
+#import <ScanditBarcodeScanner/ScanditBarcodeScanner.h>
 
-@interface ViewController ()
+
+@interface ViewController ()  <SBSScanDelegate>
 
 @property FIRDatabaseReference* reference;
 @property NSMutableArray<Reminder*>* reminders;
 @property GeoFire* geoFire;
 @property GFCircleQuery *circleQuery;
+@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
+@property (weak, nonatomic) IBOutlet SBSBarcodePickerView *barcodeScannerView;
 
 @end
 
@@ -38,6 +42,8 @@
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
         NSLog(@"Notification permissions %d with error %@", granted, error);
     }];
+    
+    [self.barcodeScannerView setScanDelegate:self];
 }
 
 
@@ -144,5 +150,25 @@
     [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
         NSLog(@"=========== Error %@", error);
     }];
+}
+- (void)didScanBarcode:(NSString *)barcode {
+    
+    [self.codeLabel setText:barcode];
+    
+    
+}
+
+- (void)barcodePicker:(nonnull SBSBarcodePicker*)picker didScan:(nonnull SBSScanSession*)session{
+    
+    NSArray* recognized = session.newlyRecognizedCodes;
+    if (recognized.count >0) {
+        SBSCode *code = recognized.firstObject;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self didScanBarcode:[code data] ];
+        }) ;
+    }
+    
+    
 }
 @end

@@ -28,6 +28,24 @@
 		6C2A51311D8CB55100ACCBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A51301D8CB55100ACCBA8 /* Assets.xcassets */; };
 		6C2A51341D8CB55100ACCBA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A51321D8CB55100ACCBA8 /* LaunchScreen.storyboard */; };
 		6C2A513C1D8CB93C00ACCBA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A513B1D8CB93C00ACCBA8 /* GoogleService-Info.plist */; };
+		6C6789911D8D8C63006F4118 /* ScanditBarcodeScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789901D8D8C63006F4118 /* ScanditBarcodeScanner.framework */; };
+		6C6789931D8D8CDC006F4118 /* ScanditBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C6789921D8D8CDC006F4118 /* ScanditBarcodeScanner.bundle */; };
+		6C6789951D8D8D1A006F4118 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789941D8D8D1A006F4118 /* MediaPlayer.framework */; };
+		6C6789971D8D8D21006F4118 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789961D8D8D21006F4118 /* CoreText.framework */; };
+		6C6789991D8D8D28006F4118 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789981D8D8D28006F4118 /* OpenGLES.framework */; };
+		6C67899B1D8D8D30006F4118 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C67899A1D8D8D30006F4118 /* MessageUI.framework */; };
+		6C67899D1D8D8D3A006F4118 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C67899C1D8D8D3A006F4118 /* CoreVideo.framework */; };
+		6C67899F1D8D8D47006F4118 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C67899E1D8D8D47006F4118 /* CoreGraphics.framework */; };
+		6C6789A11D8D8D4F006F4118 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789A01D8D8D4F006F4118 /* AudioToolbox.framework */; };
+		6C6789A31D8D8D56006F4118 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789A21D8D8D56006F4118 /* AVFoundation.framework */; };
+		6C6789A51D8D8D5D006F4118 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789A41D8D8D5D006F4118 /* QuartzCore.framework */; };
+		6C6789A71D8D8D64006F4118 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789A61D8D8D64006F4118 /* CoreLocation.framework */; };
+		6C6789A91D8D8D6A006F4118 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789A81D8D8D6A006F4118 /* SystemConfiguration.framework */; };
+		6C6789AB1D8D8D75006F4118 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789AA1D8D8D75006F4118 /* libz.tbd */; };
+		6C6789AD1D8D8D85006F4118 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789AC1D8D8D85006F4118 /* libc++.tbd */; };
+		6C6789AF1D8D8D92006F4118 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789AE1D8D8D92006F4118 /* libiconv.tbd */; };
+		6C6789B11D8D8DCE006F4118 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789B01D8D8DCE006F4118 /* CoreMedia.framework */; };
+		6C6789B31D8D8DE1006F4118 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6789B21D8D8DE1006F4118 /* Foundation.framework */; };
 		9BF5C854961361AC8EB2E1B9 /* libPods-ChuchiSiriExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BEB814F4EE18CBC284CF20 /* libPods-ChuchiSiriExtension.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +117,24 @@
 		6C2A51331D8CB55100ACCBA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C2A51351D8CB55100ACCBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C2A513B1D8CB93C00ACCBA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C6789901D8D8C63006F4118 /* ScanditBarcodeScanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ScanditBarcodeScanner.framework; sourceTree = "<group>"; };
+		6C6789921D8D8CDC006F4118 /* ScanditBarcodeScanner.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ScanditBarcodeScanner.bundle; sourceTree = "<group>"; };
+		6C6789941D8D8D1A006F4118 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		6C6789961D8D8D21006F4118 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		6C6789981D8D8D28006F4118 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		6C67899A1D8D8D30006F4118 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6C67899C1D8D8D3A006F4118 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		6C67899E1D8D8D47006F4118 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6C6789A01D8D8D4F006F4118 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6C6789A21D8D8D56006F4118 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6C6789A41D8D8D5D006F4118 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6C6789A61D8D8D64006F4118 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6C6789A81D8D8D6A006F4118 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6C6789AA1D8D8D75006F4118 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6C6789AC1D8D8D85006F4118 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		6C6789AE1D8D8D92006F4118 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		6C6789B01D8D8DCE006F4118 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6C6789B21D8D8DE1006F4118 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6FDB1F386C8E3683D202FACF /* Pods-Chuchi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chuchi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chuchi/Pods-Chuchi.debug.xcconfig"; sourceTree = "<group>"; };
 		88BEB814F4EE18CBC284CF20 /* libPods-ChuchiSiriExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChuchiSiriExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69E01C8F60453911B7B73FE /* Pods-ChuchiSiriExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuchiSiriExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChuchiSiriExtension/Pods-ChuchiSiriExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +163,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6789B31D8D8DE1006F4118 /* Foundation.framework in Frameworks */,
+				6C6789B11D8D8DCE006F4118 /* CoreMedia.framework in Frameworks */,
+				6C6789AF1D8D8D92006F4118 /* libiconv.tbd in Frameworks */,
+				6C6789AD1D8D8D85006F4118 /* libc++.tbd in Frameworks */,
+				6C6789AB1D8D8D75006F4118 /* libz.tbd in Frameworks */,
+				6C6789A91D8D8D6A006F4118 /* SystemConfiguration.framework in Frameworks */,
+				6C6789A71D8D8D64006F4118 /* CoreLocation.framework in Frameworks */,
+				6C6789A51D8D8D5D006F4118 /* QuartzCore.framework in Frameworks */,
+				6C6789A31D8D8D56006F4118 /* AVFoundation.framework in Frameworks */,
+				6C6789A11D8D8D4F006F4118 /* AudioToolbox.framework in Frameworks */,
+				6C67899F1D8D8D47006F4118 /* CoreGraphics.framework in Frameworks */,
+				6C67899D1D8D8D3A006F4118 /* CoreVideo.framework in Frameworks */,
+				6C67899B1D8D8D30006F4118 /* MessageUI.framework in Frameworks */,
+				6C6789991D8D8D28006F4118 /* OpenGLES.framework in Frameworks */,
+				6C6789971D8D8D21006F4118 /* CoreText.framework in Frameworks */,
+				6C6789951D8D8D1A006F4118 /* MediaPlayer.framework in Frameworks */,
 				27FD48C8D6D406FDE0C2236F /* libPods-Chuchi.a in Frameworks */,
+				6C6789911D8D8C63006F4118 /* ScanditBarcodeScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +269,7 @@
 		6C2A51231D8CB55100ACCBA8 /* Chuchi */ = {
 			isa = PBXGroup;
 			children = (
+				6C6789921D8D8CDC006F4118 /* ScanditBarcodeScanner.bundle */,
 				27324BC31D8D7D0D00CC1D26 /* View Controllers */,
 				27342A941D8D3F1F007FFBC4 /* Services */,
 				27342A671D8CBD03007FFBC4 /* Model */,
@@ -253,6 +307,23 @@
 		C8BCA3DCE7B763CF0B780DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C6789B21D8D8DE1006F4118 /* Foundation.framework */,
+				6C6789B01D8D8DCE006F4118 /* CoreMedia.framework */,
+				6C6789AE1D8D8D92006F4118 /* libiconv.tbd */,
+				6C6789AC1D8D8D85006F4118 /* libc++.tbd */,
+				6C6789AA1D8D8D75006F4118 /* libz.tbd */,
+				6C6789A81D8D8D6A006F4118 /* SystemConfiguration.framework */,
+				6C6789A61D8D8D64006F4118 /* CoreLocation.framework */,
+				6C6789A41D8D8D5D006F4118 /* QuartzCore.framework */,
+				6C6789A21D8D8D56006F4118 /* AVFoundation.framework */,
+				6C6789A01D8D8D4F006F4118 /* AudioToolbox.framework */,
+				6C67899E1D8D8D47006F4118 /* CoreGraphics.framework */,
+				6C67899C1D8D8D3A006F4118 /* CoreVideo.framework */,
+				6C67899A1D8D8D30006F4118 /* MessageUI.framework */,
+				6C6789981D8D8D28006F4118 /* OpenGLES.framework */,
+				6C6789961D8D8D21006F4118 /* CoreText.framework */,
+				6C6789941D8D8D1A006F4118 /* MediaPlayer.framework */,
+				6C6789901D8D8C63006F4118 /* ScanditBarcodeScanner.framework */,
 				C2B8133A1CCB983E2AF83BB9 /* libPods-Chuchi.a */,
 				27342A7D1D8D38C4007FFBC4 /* IntentsUI.framework */,
 				88BEB814F4EE18CBC284CF20 /* libPods-ChuchiSiriExtension.a */,
@@ -334,17 +405,17 @@
 				TargetAttributes = {
 					27342A711D8D38C4007FFBC4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = JEHAG5DVUC;
+						DevelopmentTeam = P8ED3QV2RU;
 						ProvisioningStyle = Automatic;
 					};
 					27342A7B1D8D38C4007FFBC4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = JEHAG5DVUC;
+						DevelopmentTeam = P8ED3QV2RU;
 						ProvisioningStyle = Automatic;
 					};
 					6C2A51201D8CB55100ACCBA8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = JEHAG5DVUC;
+						DevelopmentTeam = P8ED3QV2RU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -393,6 +464,7 @@
 				6C2A51341D8CB55100ACCBA8 /* LaunchScreen.storyboard in Resources */,
 				6C2A513C1D8CB93C00ACCBA8 /* GoogleService-Info.plist in Resources */,
 				6C2A51311D8CB55100ACCBA8 /* Assets.xcassets in Resources */,
+				6C6789931D8D8CDC006F4118 /* ScanditBarcodeScanner.bundle in Resources */,
 				6C2A512F1D8CB55100ACCBA8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,7 +644,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E785A41754EA1F254F42477B /* Pods-ChuchiSiriExtension.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = JEHAG5DVUC;
+				DEVELOPMENT_TEAM = P8ED3QV2RU;
 				INFOPLIST_FILE = ChuchiSiriExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi.ChuchiSiriExtension;
@@ -585,7 +657,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B69E01C8F60453911B7B73FE /* Pods-ChuchiSiriExtension.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = JEHAG5DVUC;
+				DEVELOPMENT_TEAM = P8ED3QV2RU;
 				INFOPLIST_FILE = ChuchiSiriExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi.ChuchiSiriExtension;
@@ -597,7 +669,7 @@
 		27342A8F1D8D38C4007FFBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = JEHAG5DVUC;
+				DEVELOPMENT_TEAM = P8ED3QV2RU;
 				INFOPLIST_FILE = ChuchiSiriExtensionUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi.ChuchiSiriExtensionUI;
@@ -609,7 +681,7 @@
 		27342A901D8D38C4007FFBC4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = JEHAG5DVUC;
+				DEVELOPMENT_TEAM = P8ED3QV2RU;
 				INFOPLIST_FILE = ChuchiSiriExtensionUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi.ChuchiSiriExtensionUI;
@@ -711,7 +783,11 @@
 			baseConfigurationReference = 6FDB1F386C8E3683D202FACF /* Pods-Chuchi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JEHAG5DVUC;
+				DEVELOPMENT_TEAM = P8ED3QV2RU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Chuchi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi;
@@ -724,7 +800,11 @@
 			baseConfigurationReference = 14CAB625B84134BA72AC4233 /* Pods-Chuchi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JEHAG5DVUC;
+				DEVELOPMENT_TEAM = P8ED3QV2RU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Chuchi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi;
