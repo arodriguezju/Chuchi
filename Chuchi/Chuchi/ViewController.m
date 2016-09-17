@@ -112,16 +112,12 @@
 
 - (void)checkIfAnyProductAvailableAtStoreWithKey:(NSString*)key{
     for (Reminder* reminder in self.reminders) {
-        if (reminder.product && !reminder.reminderFired) {
+        if (reminder.product) {
             [[AvailabilityCheckService sharedInstance] checkIfProduct:reminder.product isAvailableAtStoreWithKey:key withCompletionBlock:^(BOOL success, NSString * shopName) {
                 NSLog(@"FOUND %d %@ at %@(%@)", success, reminder.product.EANCode, shopName, key);
                 if (!success) {
                     return;
                 }
-                if (reminder.reminderFired) {
-                    return;
-                }
-                reminder.reminderFired = YES;
                 [[ProductService sharedInstance] loadImagesForProduct:reminder.product withCompletionBlock:^(BOOL success) {
                     if (success) {
                         [self showNotificationForReminder:reminder fromShopName:shopName];
@@ -133,6 +129,7 @@
 }
 
 - (void)showNotificationForReminder:(Reminder*)reminder fromShopName:(NSString*)shopName{
+    [[ReminderCreatorService sharedInstance] removeReminder:reminder];
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
     content.title = @"Shopping request";
     content.body = [NSString stringWithFormat:@"%@ says: \"%@\": %@ from the %@ nearby", reminder.reminderCreator, reminder.message, reminder.product.name, shopName];
@@ -166,7 +163,7 @@
     
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString* forWhom = Message.sharedInstance.recipient;
-    hud.label.text = [NSString stringWithFormat:@"Creating reminder for %@", forWhom];
+    hud.label.text = [NSString stringWithFormat:@"Reminding %@ to %@", forWhom, Message.sharedInstance.message];
     hud.label.numberOfLines = 0;
     hud.mode = MBProgressHUDModeIndeterminate;
                       
@@ -174,6 +171,7 @@
         if (success) {
             hud.label.text = @"Reminder created!";
         } else {
+            [self.scannedBarcodes removeObject:barcode];
             hud.label.text = @"Failed";
         }
         hud.mode = MBProgressHUDModeText;
@@ -184,7 +182,6 @@
 }
 
 - (void)barcodePicker:(nonnull SBSBarcodePicker*)picker didScan:(nonnull SBSScanSession*)session{
-    
     NSArray* recognized = session.newlyRecognizedCodes;
     if (recognized.count >0) {
         SBSCode *code = recognized.firstObject;
@@ -194,4 +191,5 @@
         }) ;
     }
 }
+
 @end

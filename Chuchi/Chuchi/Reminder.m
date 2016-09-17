@@ -14,6 +14,7 @@
 @property (readwrite) NSString* message;
 @property (readwrite) NSString* reminderCreator;
 @property (readwrite) Product* product;
+@property (readwrite) NSString* reminderId;
 
 @end
 @implementation Reminder
@@ -21,7 +22,7 @@
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary{
     self = [super init];
     if (self) {
-        self.reminderFired = [dictionary[NSStringFromSelector(@selector(reminderFired))] boolValue];
+        self.reminderId = dictionary[NSStringFromSelector(@selector(reminderId))];
         self.reminderCreator = dictionary[NSStringFromSelector(@selector(reminderCreator))];
         self.message = dictionary[NSStringFromSelector(@selector(message))];
         self.product = [[Product alloc] initWithDictionary:dictionary[NSStringFromSelector(@selector(product))]];

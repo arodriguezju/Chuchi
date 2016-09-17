@@ -82,7 +82,7 @@
     
     userActivity.userInfo = @{@"message" : intent.content, @"recipient" : intent.recipients.firstObject.displayName};
     
-    INSendMessageIntentResponse *response = [[INSendMessageIntentResponse alloc] initWithCode:INSendMessageIntentResponseCodeFailureRequiringAppLaunch userActivity:userActivity];
+    INSendMessageIntentResponse *response = [[INSendMessageIntentResponse alloc] initWithCode:INSendMessageIntentResponseCodeSuccess userActivity:userActivity];
     completion(response);
 }
 
@@ -94,7 +94,8 @@
     
     NSUserActivity *userActivity = [[NSUserActivity alloc] initWithActivityType:NSStringFromClass([INSendMessageIntent class])];
 
-    userActivity.userInfo = @{@"message" : @"silviu"};
+    userActivity.userInfo = @{@"message" : intent.content, @"recipient" : intent.recipients.firstObject.displayName};
+    
     INSendMessageIntentResponse *response = [[INSendMessageIntentResponse alloc] initWithCode:INSendMessageIntentResponseCodeFailureRequiringAppLaunch userActivity:userActivity];
     completion(response);
     

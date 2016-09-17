@@ -9,6 +9,8 @@
 #import "ReminderCreatorService.h"
 @import FirebaseDatabase;
 @import Firebase;
+#import "Reminder.h"
+#import "User.h"
 #import <AFHTTPRequestOperation.h>
 
 @implementation ReminderCreatorService
@@ -42,8 +44,9 @@
         NSString* imageURL = firstResult[@"images"][@"highres"];
         
         FIRDatabaseReference* reference = [[[[[FIRDatabase database] reference] child:@"user"] child:user] child:@"reminders"];
-        NSDictionary* dictionary = @{@"message" : message, @"reminderFired" : @(NO), @"reminderCreator" : reminderCreator, @"product" : @{@"EANCode" : EANNumber, @"name" : name, @"imageURL" : imageURL}};
-        [[reference childByAutoId] setValue:dictionary withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        reference = [reference childByAutoId];
+        NSDictionary* dictionary = @{@"reminderId" : reference.key, @"message" : message, @"reminderCreator" : reminderCreator, @"product" : @{@"EANCode" : EANNumber, @"name" : name, @"imageURL" : imageURL}};
+        [reference setValue:dictionary withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
             NSLog(@"Done with error %@", error);
             completionBlock(error == Nil);
         }];
@@ -54,4 +57,10 @@
     [operation start];
 }
 
+- (void)removeReminder:(Reminder*)reminder{
+    FIRDatabaseReference* reference = [[[[[[FIRDatabase database] reference] child:@"user"] child:User.sharedInstance.name] child:@"reminders"] child:reminder.reminderId];
+    [reference setValue:Nil withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        NSLog(@"Result %@", error);
+    }];
+}
 @end
