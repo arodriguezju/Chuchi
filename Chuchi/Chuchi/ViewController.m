@@ -15,6 +15,7 @@
 #import "ReminderCreatorService.h"
 @import UserNotifications;
 #import "AvailabilityCheckService.h"
+#import "User.h"
 
 @interface ViewController ()
 
@@ -47,8 +48,7 @@
 
 - (void)loadRemindersForUser{
     __weak typeof(self) welf = self;
-    NSString* currentUser = @"Silviu";
-    self.reference = [[[[[FIRDatabase database] reference] child:@"user"] child:currentUser] child:@"reminders"];
+    self.reference = [[[[[FIRDatabase database] reference] child:@"user"] child:User.sharedInstance.name] child:@"reminders"];
     [self.reference observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSLog(@"Receveid %@", snapshot.value);
         welf.reminders = [NSMutableArray new];
@@ -111,13 +111,15 @@
     content.body = [NSString stringWithFormat:@"%@ would like you to buy %@ from %@", reminder.reminderCreator, reminder.product.name, shopName];
     content.sound = [UNNotificationSound defaultSound];
     
-    NSError* error;
-    UNNotificationAttachment* image = [UNNotificationAttachment attachmentWithIdentifier:@"image" URL:reminder.product.URLToLocalImage options:@{} error:&error];
-    content.attachments = @[image];
+    if (reminder.product.URLToLocalImage) {
+        NSError* error;
+        UNNotificationAttachment* image = [UNNotificationAttachment attachmentWithIdentifier:@"image" URL:reminder.product.URLToLocalImage options:@{} error:&error];
+        content.attachments = @[image];
+    }
     
     // Deliver the notification in five seconds.
     UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
-                                                  triggerWithTimeInterval:0 repeats:NO];
+                                                  triggerWithTimeInterval:1 repeats:NO];
     UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"ReminderForShopping"
                                                                           content:content trigger:trigger];
     // Schedule the notification.

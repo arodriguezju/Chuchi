@@ -122,9 +122,4 @@
     INSetMessageAttributeIntentResponse *response = [[INSetMessageAttributeIntentResponse alloc] initWithCode:INSetMessageAttributeIntentResponseCodeSuccess userActivity:userActivity];
     completion(response);
 }
-
-#pragma mark - Create reminder online
-- (void)createReminderForUser:(NSString*)user forProductWithEANNumber:(NSString*)EANNumber{
-    
-}
 @end
