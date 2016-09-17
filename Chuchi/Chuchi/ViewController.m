@@ -51,6 +51,9 @@
     self.reference = [[[[[FIRDatabase database] reference] child:@"user"] child:User.sharedInstance.name] child:@"reminders"];
     [self.reference observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSLog(@"Receveid %@", snapshot.value);
+        if (snapshot.value == [NSNull null]) {
+            return;
+        }
         welf.reminders = [NSMutableArray new];
         NSDictionary* reminders = snapshot.value;
         for (NSString* key in reminders.allKeys) {
