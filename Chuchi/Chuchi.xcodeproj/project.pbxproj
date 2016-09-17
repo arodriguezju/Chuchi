@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27324BC21D8D6F4C00CC1D26 /* AvailabilityCheckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27324BC11D8D6F4C00CC1D26 /* AvailabilityCheckService.m */; };
 		27324BC61D8D7D2300CC1D26 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 27324BC51D8D7D2300CC1D26 /* User.m */; };
+		27324BC91D8D84AD00CC1D26 /* ProductService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27324BC81D8D84AD00CC1D26 /* ProductService.m */; };
 		27342A6A1D8CBD21007FFBC4 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A691D8CBD21007FFBC4 /* Reminder.m */; };
 		27342A6D1D8CBE66007FFBC4 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A6C1D8CBE66007FFBC4 /* Product.m */; };
 		27342A761D8D38C4007FFBC4 /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A751D8D38C4007FFBC4 /* IntentHandler.m */; };
@@ -68,6 +69,8 @@
 		27324BC11D8D6F4C00CC1D26 /* AvailabilityCheckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailabilityCheckService.m; sourceTree = "<group>"; };
 		27324BC41D8D7D2300CC1D26 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		27324BC51D8D7D2300CC1D26 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		27324BC71D8D84AD00CC1D26 /* ProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductService.h; sourceTree = "<group>"; };
+		27324BC81D8D84AD00CC1D26 /* ProductService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductService.m; sourceTree = "<group>"; };
 		27342A681D8CBD21007FFBC4 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		27342A691D8CBD21007FFBC4 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		27342A6B1D8CBE66007FFBC4 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				27342A961D8D3F32007FFBC4 /* ReminderCreatorService.m */,
 				27324BC01D8D6F4C00CC1D26 /* AvailabilityCheckService.h */,
 				27324BC11D8D6F4C00CC1D26 /* AvailabilityCheckService.m */,
+				27324BC71D8D84AD00CC1D26 /* ProductService.h */,
+				27324BC81D8D84AD00CC1D26 /* ProductService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				27324BC61D8D7D2300CC1D26 /* User.m in Sources */,
 				6C2A512C1D8CB55100ACCBA8 /* ViewController.m in Sources */,
 				27342A6D1D8CBE66007FFBC4 /* Product.m in Sources */,
+				27324BC91D8D84AD00CC1D26 /* ProductService.m in Sources */,
 				6C2A51291D8CB55100ACCBA8 /* AppDelegate.m in Sources */,
 				6C2A51261D8CB55100ACCBA8 /* main.m in Sources */,
 				27342A971D8D3F32007FFBC4 /* ReminderCreatorService.m in Sources */,

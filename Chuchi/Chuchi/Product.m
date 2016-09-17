@@ -25,7 +25,7 @@
     if (self) {
         self.EANCode = dictionary[NSStringFromSelector(@selector(EANCode))];
         self.name = dictionary[NSStringFromSelector(@selector(name))];
-        self.URLToRemoteImage = dictionary[@"imageURL"];
+        self.URLToRemoteImage = [NSURL URLWithString:dictionary[@"imageURL"]];
     }
     return self;
 }

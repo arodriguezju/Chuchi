@@ -16,6 +16,7 @@
 @import UserNotifications;
 #import "AvailabilityCheckService.h"
 #import "User.h"
+#import "ProductService.h"
 
 @interface ViewController ()
 
@@ -60,7 +61,11 @@
             NSDictionary* reminderDictionary = reminders[key];
             Reminder* reminder = [[Reminder alloc] initWithDictionary:reminderDictionary];
             [welf.reminders addObject:reminder];
-            [welf showNotificationForReminder:reminder fromShopName:@"Best shop ever"];
+            [[ProductService sharedInstance] loadImagesForProduct:reminder.product withCompletionBlock:^(BOOL success) {
+                if (success) {
+                    [welf showNotificationForReminder:reminder fromShopName:@"Best shop ever"];
+                }
+            }];
         }
     }];
 }
@@ -97,12 +102,21 @@
 
 - (void)checkIfAnyProductAvailableAtStoreWithKey:(NSString*)key{
     for (Reminder* reminder in self.reminders) {
-        if (reminder.product) {
+        if (reminder.product && !reminder.reminderFired) {
             [[AvailabilityCheckService sharedInstance] checkIfProduct:reminder.product isAvailableAtStoreWithKey:key withCompletionBlock:^(BOOL success, NSString * shopName) {
-                if (!reminder.reminderFired) {
-                    [self showNotificationForReminder:reminder fromShopName:shopName];
-                }
                 NSLog(@"FOUND %d %@ at %@(%@)", success, reminder.product.EANCode, shopName, key);
+                if (!success) {
+                    return;
+                }
+                if (reminder.reminderFired) {
+                    return;
+                }
+                reminder.reminderFired = YES;
+                [[ProductService sharedInstance] loadImagesForProduct:reminder.product withCompletionBlock:^(BOOL success) {
+                    if (success) {
+                        [self showNotificationForReminder:reminder fromShopName:shopName];
+                    }
+                }];
             }];
         }
     }

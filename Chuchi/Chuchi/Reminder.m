@@ -12,7 +12,6 @@
 @interface Reminder()
 
 @property (readwrite) NSString* reminderCreator;
-@property (readwrite) BOOL reminderFired;
 @property (readwrite) Product* product;
 
 @end

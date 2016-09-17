@@ -15,7 +15,7 @@
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 
 @property (readonly) NSString* reminderCreator;
-@property (readonly) BOOL reminderFired;
+@property BOOL reminderFired;
 @property (readonly) Product* product;
 
 @end
