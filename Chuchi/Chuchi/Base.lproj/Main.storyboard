@@ -35,13 +35,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last recipient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-DV-TKn">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Z8u-wO-rGr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="33W-Ar-e4C"/>
                             <constraint firstItem="s1G-xG-AfU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="3FX-Co-LIr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z8u-wO-rGr" secondAttribute="trailing" id="EJ5-Xj-VGQ"/>
-                            <constraint firstItem="s1G-xG-AfU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="197" id="Ofo-pt-LCp"/>
+                            <constraint firstItem="fYb-DV-TKn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NSR-TI-XSQ"/>
+                            <constraint firstItem="s1G-xG-AfU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="Ofo-pt-LCp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fYb-DV-TKn" secondAttribute="trailing" id="OlX-98-nhC"/>
+                            <constraint firstItem="fYb-DV-TKn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="ehG-Sf-Fcu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="s1G-xG-AfU" secondAttribute="trailing" constant="-16" id="gHw-Rw-Bh3"/>
                             <constraint firstItem="Z8u-wO-rGr" firstAttribute="top" secondItem="s1G-xG-AfU" secondAttribute="bottom" constant="70" id="h19-FP-61j"/>
                         </constraints>
@@ -49,6 +57,7 @@
                     <connections>
                         <outlet property="barcodeScannerView" destination="s1G-xG-AfU" id="PKz-ev-kV9"/>
                         <outlet property="codeLabel" destination="Z8u-wO-rGr" id="Qec-Zi-N6u"/>
+                        <outlet property="lastRecipientLabel" destination="fYb-DV-TKn" id="dtc-Ys-Myp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,6 +10,6 @@
 
 @interface ViewController : UIViewController
 
-
+-(void)lastRecipientUpdated:(NSString *)lastRecipient;
 @end
 

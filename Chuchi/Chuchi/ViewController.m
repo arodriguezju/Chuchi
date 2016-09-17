@@ -18,6 +18,7 @@
 #import "User.h"
 #import "ProductService.h"
 #import <ScanditBarcodeScanner/ScanditBarcodeScanner.h>
+#import "AppDelegate.h"
 
 
 @interface ViewController ()  <SBSScanDelegate>
@@ -28,6 +29,9 @@
 @property GFCircleQuery *circleQuery;
 @property (weak, nonatomic) IBOutlet UILabel *codeLabel;
 @property (weak, nonatomic) IBOutlet SBSBarcodePickerView *barcodeScannerView;
+@property NSString *lastRecognizedCode;
+@property (weak, nonatomic) IBOutlet UILabel *lastRecipientLabel;
+
 
 @end
 
@@ -44,6 +48,10 @@
     }];
     
     [self.barcodeScannerView setScanDelegate:self];
+    
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    delegate.viewController = self;
 }
 
 
@@ -126,6 +134,7 @@
             }];
         }
     }
+    
 }
 
 - (void)showNotificationForReminder:(Reminder*)reminder fromShopName:(NSString*)shopName{
@@ -161,14 +170,22 @@
 - (void)barcodePicker:(nonnull SBSBarcodePicker*)picker didScan:(nonnull SBSScanSession*)session{
     
     NSArray* recognized = session.newlyRecognizedCodes;
-    if (recognized.count >0) {
+    if (recognized.count >0 ) {
         SBSCode *code = recognized.firstObject;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self didScanBarcode:[code data] ];
+            if(!self.lastRecognizedCode || ![self.lastRecognizedCode isEqualToString:[code data]]) {
+                self.lastRecognizedCode = [code data] ;
+                [self didScanBarcode:[code data] ];}
         }) ;
     }
     
     
 }
+
+-(void)lastRecipientUpdated:(NSString *)lastRecipient {
+
+    [self.lastRecipientLabel setText:lastRecipient];
+}
+
 @end
