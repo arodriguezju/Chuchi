@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27342A6A1D8CBD21007FFBC4 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A691D8CBD21007FFBC4 /* Reminder.m */; };
+		27342A6D1D8CBE66007FFBC4 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 27342A6C1D8CBE66007FFBC4 /* Product.m */; };
 		27FD48C8D6D406FDE0C2236F /* libPods-Chuchi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B8133A1CCB983E2AF83BB9 /* libPods-Chuchi.a */; };
 		6C2A51261D8CB55100ACCBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A51251D8CB55100ACCBA8 /* main.m */; };
 		6C2A51291D8CB55100ACCBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A51281D8CB55100ACCBA8 /* AppDelegate.m */; };
@@ -19,6 +21,10 @@
 
 /* Begin PBXFileReference section */
 		14CAB625B84134BA72AC4233 /* Pods-Chuchi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chuchi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chuchi/Pods-Chuchi.release.xcconfig"; sourceTree = "<group>"; };
+		27342A681D8CBD21007FFBC4 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		27342A691D8CBD21007FFBC4 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		27342A6B1D8CBE66007FFBC4 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		27342A6C1D8CBE66007FFBC4 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		6C2A51211D8CB55100ACCBA8 /* Chuchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chuchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2A51251D8CB55100ACCBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C2A51271D8CB55100ACCBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,6 +52,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27342A671D8CBD03007FFBC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27342A681D8CBD21007FFBC4 /* Reminder.h */,
+				27342A691D8CBD21007FFBC4 /* Reminder.m */,
+				27342A6B1D8CBE66007FFBC4 /* Product.h */,
+				27342A6C1D8CBE66007FFBC4 /* Product.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		6C2A51181D8CB55100ACCBA8 = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +84,7 @@
 		6C2A51231D8CB55100ACCBA8 /* Chuchi */ = {
 			isa = PBXGroup;
 			children = (
-				6C2A513B1D8CB93C00ACCBA8 /* GoogleService-Info.plist */,
+				27342A671D8CBD03007FFBC4 /* Model */,
 				6C2A51271D8CB55100ACCBA8 /* AppDelegate.h */,
 				6C2A51281D8CB55100ACCBA8 /* AppDelegate.m */,
 				6C2A512A1D8CB55100ACCBA8 /* ViewController.h */,
@@ -75,7 +92,6 @@
 				6C2A512D1D8CB55100ACCBA8 /* Main.storyboard */,
 				6C2A51301D8CB55100ACCBA8 /* Assets.xcassets */,
 				6C2A51321D8CB55100ACCBA8 /* LaunchScreen.storyboard */,
-				6C2A51351D8CB55100ACCBA8 /* Info.plist */,
 				6C2A51241D8CB55100ACCBA8 /* Supporting Files */,
 			);
 			path = Chuchi;
@@ -84,6 +100,8 @@
 		6C2A51241D8CB55100ACCBA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6C2A513B1D8CB93C00ACCBA8 /* GoogleService-Info.plist */,
+				6C2A51351D8CB55100ACCBA8 /* Info.plist */,
 				6C2A51251D8CB55100ACCBA8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -140,7 +158,7 @@
 				TargetAttributes = {
 					6C2A51201D8CB55100ACCBA8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = P8ED3QV2RU;
+						DevelopmentTeam = JEHAG5DVUC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -231,8 +249,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C2A512C1D8CB55100ACCBA8 /* ViewController.m in Sources */,
+				27342A6D1D8CBE66007FFBC4 /* Product.m in Sources */,
 				6C2A51291D8CB55100ACCBA8 /* AppDelegate.m in Sources */,
 				6C2A51261D8CB55100ACCBA8 /* main.m in Sources */,
+				27342A6A1D8CBD21007FFBC4 /* Reminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +371,7 @@
 			baseConfigurationReference = 6FDB1F386C8E3683D202FACF /* Pods-Chuchi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P8ED3QV2RU;
+				DEVELOPMENT_TEAM = JEHAG5DVUC;
 				INFOPLIST_FILE = Chuchi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi;
@@ -364,7 +384,7 @@
 			baseConfigurationReference = 14CAB625B84134BA72AC4233 /* Pods-Chuchi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P8ED3QV2RU;
+				DEVELOPMENT_TEAM = JEHAG5DVUC;
 				INFOPLIST_FILE = Chuchi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackzurich.Chuchi;

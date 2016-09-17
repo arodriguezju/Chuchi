@@ -1,4 +1,7 @@
 target 'Chuchi' do
-pod 'Firebase/Core'
+pod 'Firebase'
+pod 'FirebaseDatabase'
+pod 'INTULocationManager'
+pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
 pod 'AFNetworking', '~> 2.5'
 end
